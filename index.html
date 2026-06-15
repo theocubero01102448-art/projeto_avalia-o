@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Copa do Mundo 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🏆 TABELA COPA DO MUNDO 2026 ⚽</h1>
+        <p>Canadá, Estados Unidos e México</p>
+    </header>
+
+    <main class="container">
+        <section class="fase-grupos">
+            <h2>Fase de Grupos</h2>
+            
+            <div class="grupo-card">
+                <h3>GRUPO A</h3>
+                <table class="tabela-classificacao" id="tabela-grupo-a">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Seleção</th>
+                            <th>P</th>
+                            <th>J</th>
+                            <th>V</th>
+                            <th>E</th>
+                            <th>D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-selecao="estados-unidos">
+                            <td>1º</td>
+                            <td>🇺🇸 EUA</td>
+                            <td class="pontos">0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr data-selecao="mexico">
+                            <td>2º</td>
+                            <td>🇲🇽 México</td>
+                            <td class="pontos">0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr data-selecao="canada">
+                            <td>3º</td>
+                            <td>🇨🇦 Canadá</td>
+                            <td class="pontos">0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="jogos">
+                    <h4>Jogos do Grupo</h4>
+                    <div class="jogo-item" data-grupo="A">
+                        <span>🇺🇸 EUA</span>
+                        <input type="number" min="0" class="gols-mandante" data-time="estados-unidos">
+                        x
+                        <input type="number" min="0" class="gols-visitante" data-time="mexico">
+                        <span>🇲🇽 MEX</span>
+                    </div>
+                    <div class="jogo-item" data-grupo="A">
+                        <span>🇨🇦 CAN</span>
+                        <input type="number" min="0" class="gols-mandante" data-time="canada">
+                        x
+                        <input type="number" min="0" class="gols-visitante" data-time="estados-unidos">
+                        <span>🇺🇸 EUA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fase-final">
+            <h2>Chaveamento Mata-Mata</h2>
+            <div class="chaveamento">
+                
+                <div class="rodada quartas">
+                    <h3>Quartas de Final</h3>
+                    <div class="partida-mata">
+                        <div class="time">🇺🇸 EUA <input type="number" min="0"></div>
+                        <div class="time">🇧🇷 Brasil <input type="number" min="0"></div>
+                    </div>
+                    <div class="partida-mata">
+                        <div class="time">🇦🇷 Argentina <input type="number" min="0"></div>
+                        <div class="time">🇫🇷 França <input type="number" min="0"></div>
+                    </div>
+                </div>
+
+                <div class="rodada semifinal">
+                    <h3>Semifinal</h3>
+                    <div class="partida-mata">
+                        <div class="time">Vencedor Q1 <input type="number" min="0"></div>
+                        <div class="time">Vencedor Q2 <input type="number" min="0"></div>
+                    </div>
+                </div>
+
+                <div class="rodada final">
+                    <h3>Grande Final</h3>
+                    <div class="partida-mata destaque">
+                        <div class="time">Finalista 1 <input type="number" min="0"></div>
+                        <div class="time">Finalista 2 <input type="number" min="0"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Simulador Copa do Mundo</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
