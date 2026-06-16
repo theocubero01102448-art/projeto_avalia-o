@@ -1,188 +1,169 @@
-/* Configurações Gerais e Cores */
-:root {
-    --bg-color: #f4f7f6;
-    --text-main: #333;
-    --text-muted: #777;
-    --group-blue: #1e73e8; /* Azul claro do topo do card */
-    --group-green: #00a65a; /* Verde do corpo do card */
-    --tag-concacaf-bg: #e6f9f0;
-    --tag-concacaf-text: #28a745;
-    --tag-caf-bg: #fff5e6;
-    --tag-caf-text: #fd7e14;
-    --tag-afc-bg: #ffe6e6;
-    --tag-afc-text: #dc3545;
-    --tag-uefa-bg: #e6f0ff;
-    --tag-uefa-text: #007bff;
-    --tag-conmebol-bg: #fffbe6;
-    --tag-conmebol-text: #c09e00;
-    --tag-ofc-bg: #f3e6ff;
-    --tag-ofc-text: #6f42c1;
-    --white: #ffffff;
+/* Reset e Variáveis de Cores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    margin: 0;
-    padding: 20px;
-    color: var(--text-main);
+    background-color: #f1f7f6;
+    color: #333;
+    padding-bottom: 40px;
 }
 
-/* Header */
-header {
+/* Cabeçalho */
+.main-header {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 30px 20px 15px 20px;
 }
 
-.header-main {
+.main-header h1 {
+    font-size: 2.2rem;
+    color: #112d42;
+    margin-bottom: 5px;
+}
+
+.main-header .subtitle {
+    font-size: 1.2rem;
+    color: #62727d;
+    margin-bottom: 5px;
+}
+
+.main-header .details {
+    font-size: 0.95rem;
+    color: #929fa6;
+}
+
+/* Menu de Abas */
+.nav-tabs {
     display: flex;
     justify-content: center;
+    background-color: #e9eff2;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+    padding: 6px;
+    border-radius: 30px;
+    gap: 5px;
+    overflow-x: auto;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a5560;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Grid de Grupos */
+.groups-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Card do Grupo */
+.group-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.group-header {
+    background: linear-gradient(90deg, #0d6efd 0%, #00b074 100%);
+    color: white;
+    padding: 18px 24px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.teams-list {
+    list-style: none;
+    padding: 15px 0;
+}
+
+.team-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-bottom: 1px solid #f4f6f8;
+}
+
+.team-item:last-child {
+    border-bottom: none;
+}
+
+.team-info {
+    display: flex;
     align-items: center;
     gap: 15px;
 }
 
-h1 {
-    font-size: 2.2rem;
-    margin: 0;
-}
-
-.trophy-icon {
-    font-size: 2rem;
-}
-
-.header-details p {
-    margin: 5px 0;
-    color: var(--text-muted);
-}
-
-.stats {
-    font-size: 0.9rem;
-}
-
-/* Navegação */
-nav {
+.team-position {
+    background-color: #e9eff2;
+    color: #62727d;
+    width: 26px;
+    height: 26px;
     display: flex;
-    justify-content: center;
-    background-color: #e9ecef;
-    border-radius: 50px;
-    padding: 5px;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-}
-
-.nav-btn {
-    background: none;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 50px;
-    color: var(--text-muted);
-    font-weight: 500;
-    transition: background 0.3s, color 0.3s;
-}
-
-.nav-btn:hover {
-    color: var(--text-main);
-}
-
-.nav-btn.active {
-    background-color: var(--white);
-    color: var(--text-main);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Contêiner de Grupos */
-.group-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Cartão de Grupo (Card) */
-.group-card {
-    background-color: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Ocultar grupos filtrados */
-.group-card.hidden {
-    display: none;
-}
-
-.group-header {
-    padding: 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--white);
-    background: linear-gradient(to right, var(--group-blue) 0%, var(--group-blue) 40%, var(--group-green) 40%, var(--group-green) 100%);
-}
-
-.team-list {
-    list-style: none;
-    padding: 10px 20px;
-    margin: 0;
-}
-
-.team-list li {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.team-list li:last-child {
-    border-bottom: none;
-}
-
-.rank {
-    background-color: #f0f0f0;
-    color: var(--text-muted);
+    justify-content: center;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8rem;
-    margin-right: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
 }
 
-/* Tags de Confederação */
-.tag-confed {
+.team-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #212529;
+}
+
+/* Badges das Confederações */
+.badge {
+    padding: 4px 10px;
+    border-radius: 6px;
     font-size: 0.75rem;
     font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 6px;
-    text-transform: uppercase;
 }
 
-.badge-concacaf { background-color: var(--tag-concacaf-bg); color: var(--tag-concacaf-text); }
-.badge-caf { background-color: var(--tag-caf-bg); color: var(--tag-caf-text); }
-.badge-afc { background-color: var(--tag-afc-bg); color: var(--tag-afc-text); }
-.badge-uefa { background-color: var(--tag-uefa-bg); color: var(--tag-uefa-text); }
-.badge-conmebol { background-color: var(--tag-conmebol-bg); color: var(--tag-conmebol-text); }
-.badge-ofc { background-color: var(--tag-ofc-bg); color: var(--tag-ofc-text); }
+.badge.CONCACAF { background-color: #def7ec; color: #03543f; }
+.badge.CAF { background-color: #feecdc; color: #b43403; }
+.badge.AFC { background-color: #fde8e8; color: #9b1c1c; }
+.badge.UEFA { background-color: #e1effe; color: #1e429f; }
+.badge.CONMEBOL { background-color: #fef08a; color: #713f12; }
+.badge.OFC { background-color: #f3e8ff; color: #6b21a8; }
 
-/* Ícone de Ajuda */
-.help-icon {
+/* Botão de Ajuda (?) */
+.help-badge {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #333;
-    color: var(--white);
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+    background-color: #2d3748;
+    color: white;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
