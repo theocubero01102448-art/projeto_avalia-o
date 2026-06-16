@@ -3,123 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela Copa do Mundo 2026</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Copa do Mundo 2026</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <h1>🏆 TABELA COPA DO MUNDO 2026 ⚽</h1>
-        <p>Canadá, Estados Unidos e México</p>
+        <div class="header-main">
+            <span class="trophy-icon">🏆</span>
+            <h1>Copa do Mundo 2026</h1>
+            <span class="trophy-icon">🏆</span>
+        </div>
+        <div class="header-details">
+            <p>Estados Unidos • Canadá • México</p>
+            <p class="stats">48 Seleções • 12 Grupos • 104 Partidas</p>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="fase-grupos">
-            <h2>Fase de Grupos</h2>
-            
-            <div class="grupo-card">
-                <h3>GRUPO A</h3>
-                <table class="tabela-classificacao" id="tabela-grupo-a">
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th>Seleção</th>
-                            <th>P</th>
-                            <th>J</th>
-                            <th>V</th>
-                            <th>E</th>
-                            <th>D</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-selecao="estados-unidos">
-                            <td>1º</td>
-                            <td>🇺🇸 EUA</td>
-                            <td class="pontos">0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr data-selecao="mexico">
-                            <td>2º</td>
-                            <td>🇲🇽 México</td>
-                            <td class="pontos">0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr data-selecao="canada">
-                            <td>3º</td>
-                            <td>🇨🇦 Canadá</td>
-                            <td class="pontos">0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <nav>
+        <button class="nav-btn active" data-filter="all">Todos</button>
+        <button class="nav-btn" data-filter="A-D">A-D</button>
+        <button class="nav-btn" data-filter="E-H">E-H</button>
+        <button class="nav-btn" data-filter="I-L">I-L</button>
+        <button class="nav-btn" data-filter="confederacoes">Confederações</button>
+        <button class="nav-btn" data-filter="anfitrioes">Anfitriões</button>
+        <button class="nav-btn" data-filter="estatisticas">Estatísticas</button>
+    </nav>
 
-                <div class="jogos">
-                    <h4>Jogos do Grupo</h4>
-                    <div class="jogo-item" data-grupo="A">
-                        <span>🇺🇸 EUA</span>
-                        <input type="number" min="0" class="gols-mandante" data-time="estados-unidos">
-                        x
-                        <input type="number" min="0" class="gols-visitante" data-time="mexico">
-                        <span>🇲🇽 MEX</span>
-                    </div>
-                    <div class="jogo-item" data-grupo="A">
-                        <span>🇨🇦 CAN</span>
-                        <input type="number" min="0" class="gols-mandante" data-time="canada">
-                        x
-                        <input type="number" min="0" class="gols-visitante" data-time="estados-unidos">
-                        <span>🇺🇸 EUA</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="group-container">
+        <div class="group-card group-A-D is-host is-confed-concacaf" data-group="A">
+            <div class="group-header">Grupo A</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> México <span class="tag-confed badge-concacaf">CONCACAF</span></li>
+                <li><span class="rank">2</span> África do Sul <span class="tag-confed badge-caf">CAF</span></li>
+                <li><span class="rank">3</span> Coreia do Sul <span class="tag-confed badge-afc">AFC</span></li>
+                <li><span class="rank">4</span> República Tcheca <span class="tag-confed badge-uefa">UEFA</span></li>
+            </ul>
+        </div>
 
-        <section class="fase-final">
-            <h2>Chaveamento Mata-Mata</h2>
-            <div class="chaveamento">
-                
-                <div class="rodada quartas">
-                    <h3>Quartas de Final</h3>
-                    <div class="partida-mata">
-                        <div class="time">🇺🇸 EUA <input type="number" min="0"></div>
-                        <div class="time">🇧🇷 Brasil <input type="number" min="0"></div>
-                    </div>
-                    <div class="partida-mata">
-                        <div class="time">🇦🇷 Argentina <input type="number" min="0"></div>
-                        <div class="time">🇫🇷 França <input type="number" min="0"></div>
-                    </div>
-                </div>
+        <div class="group-card group-A-D is-host is-confed-concacaf" data-group="B">
+            <div class="group-header">Grupo B</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> Canadá <span class="tag-confed badge-concacaf">CONCACAF</span></li>
+                <li><span class="rank">2</span> Bósnia e Herzegovina <span class="tag-confed badge-uefa">UEFA</span></li>
+                <li><span class="rank">3</span> Catar <span class="tag-confed badge-afc">AFC</span></li>
+                <li><span class="rank">4</span> Suíça <span class="tag-confed badge-uefa">UEFA</span></li>
+            </ul>
+        </div>
 
-                <div class="rodada semifinal">
-                    <h3>Semifinal</h3>
-                    <div class="partida-mata">
-                        <div class="time">Vencedor Q1 <input type="number" min="0"></div>
-                        <div class="time">Vencedor Q2 <input type="number" min="0"></div>
-                    </div>
-                </div>
+        <div class="group-card group-A-D is-confed-conmebol" data-group="C">
+            <div class="group-header">Grupo C</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> Brasil <span class="tag-confed badge-conmebol">CONMEBOL</span></li>
+                <li><span class="rank">2</span> Marrocos <span class="tag-confed badge-caf">CAF</span></li>
+                <li><span class="rank">3</span> Haiti <span class="tag-confed badge-concacaf">CONCACAF</span></li>
+                <li><span class="rank">4</span> Escócia <span class="tag-confed badge-uefa">UEFA</span></li>
+            </ul>
+        </div>
 
-                <div class="rodada final">
-                    <h3>Grande Final</h3>
-                    <div class="partida-mata destaque">
-                        <div class="time">Finalista 1 <input type="number" min="0"></div>
-                        <div class="time">Finalista 2 <input type="number" min="0"></div>
-                    </div>
-                </div>
+        <div class="group-card group-A-D is-host is-confed-concacaf" data-group="D">
+            <div class="group-header">Grupo D</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> Estados Unidos <span class="tag-confed badge-concacaf">CONCACAF</span></li>
+                <li><span class="rank">2</span> Paraguai <span class="tag-confed badge-conmebol">CONMEBOL</span></li>
+                <li><span class="rank">3</span> Austrália <span class="tag-confed badge-afc">AFC</span></li>
+                <li><span class="rank">4</span> Turquia <span class="tag-confed badge-uefa">UEFA</span></li>
+            </ul>
+        </div>
 
-            </div>
-        </section>
-    </main>
+        <div class="group-card group-E-H is-confed-uefa" data-group="E">
+            <div class="group-header">Grupo E</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> Alemanha <span class="tag-confed badge-uefa">UEFA</span></li>
+                <li><span class="rank">2</span> Curaçao <span class="tag-confed badge-concacaf">CONCACAF</span></li>
+                <li><span class="rank">3</span> Costa do Marfim <span class="tag-confed badge-caf">CAF</span></li>
+                <li><span class="rank">4</span> Equador <span class="tag-confed badge-conmebol">CONMEBOL</span></li>
+            </ul>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 - Simulador Copa do Mundo</p>
-    </footer>
+        <div class="group-card group-E-H is-confed-uefa" data-group="F">
+            <div class="group-header">Grupo F</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> Holanda <span class="tag-confed badge-uefa">UEFA</span></li>
+                <li><span class="rank">2</span> Japão <span class="tag-confed badge-afc">AFC</span></li>
+                <li><span class="rank">3</span> Suécia <span class="tag-confed badge-uefa">UEFA</span></li>
+                <li><span class="rank">4</span> Tunísia <span class="tag-confed badge-caf">CAF</span></li>
+            </ul>
+        </div>
+
+        <div class="group-card group-E-H is-confed-uefa" data-group="G">
+            <div class="group-header">Grupo G</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> Bélgica <span class="tag-confed badge-uefa">UEFA</span></li>
+                <li><span class="rank">2</span> Egito <span class="tag-confed badge-caf">CAF</span></li>
+                <li><span class="rank">3</span> Irã <span class="tag-confed badge-afc">AFC</span></li>
+                <li><span class="rank">4</span> Nova Zelândia <span class="tag-confed badge-ofc">OFC</span></li>
+            </ul>
+        </div>
+
+        <div class="group-card group-E-H is-confed-uefa" data-group="H">
+            <div class="group-header">Grupo H</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> Espanha <span class="tag-confed badge-uefa">UEFA</span></li>
+                <li><span class="rank">2</span> Cabo Verde <span class="tag-confed badge-caf">CAF</span></li>
+                <li><span class="rank">3</span> Arábia Saudita <span class="tag-confed badge-afc">AFC</span></li>
+                <li><span class="rank">4</span> Uruguai <span class="tag-confed badge-conmebol">CONMEBOL</span></li>
+            </ul>
+        </div>
+
+        <div class="group-card group-I-L is-confed-uefa" data-group="I">
+            <div class="group-header">Grupo I</div>
+            <ul class="team-list">
+                <li><span class="rank">1</span> França <span class="tag-confed badge-uefa">UEFA</span></li>
+                <li><span class="rank">2</span> Senegal <span class="tag-confed badge-caf">CAF</span></li>
+                <li><span class="rank">3</span> Iraque <span class="tag-confed badge-afc">AFC</span></li>
+                <li><span class="rank">4</span> Noruega <span class="tag-confed badge-uefa">UEFA</span></li>
+            </ul>
+        </div>
+
+        </main>
+
+    <div class="help-icon">?</div>
 
     <script src="script.js"></script>
 </body>

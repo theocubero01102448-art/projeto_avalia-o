@@ -1,54 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const jogos = document.querySelectorAll('.jogo-item');
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const groupCards = document.querySelectorAll('.group-card');
 
-    jogos.forEach(jogo => {
-        const inputMandante = jogo.querySelector('.gols-mandante');
-        const inputVisitante = jogo.querySelector('.gols-visitante');
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 1. Atualizar botão ativo
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-        // Escuta quando o usuário digita um placar
-        inputMandante.addEventListener('input', atualizarPontuacao);
-        inputVisitante.addEventListener('input', atualizarPontuacao);
-    });
+            // 2. Obter o valor do filtro
+            const filterValue = button.getAttribute('data-filter');
 
-    function atualizarPontuacao() {
-        // Objeto provisório para resetar e recalcular os pontos do grupo
-        let pontos = {
-            'estados-unidos': 0,
-            'mexico': 0,
-            'canada': 0
-        };
+            // 3. Filtrar os cartões
+            groupCards.forEach(card => {
+                // Padrão: mostrar tudo
+                card.classList.remove('hidden');
 
-        jogos.forEach(jogo => {
-            const inputMandante = jogo.querySelector('.gols-mandante');
-            const inputVisitante = jogo.querySelector('.gols-visitante');
-            
-            const timeMandante = inputMandante.dataset.time;
-            const timeVisitante = inputVisitante.dataset.time;
-
-            const golsM = parseInt(inputMandante.value);
-            const golsV = parseInt(inputVisitante.value);
-
-            // Se ambos os campos estiverem preenchidos, calcula o resultado
-            if (!isNaN(golsM) && !isNaN(golsV)) {
-                if (golsM > golsV) {
-                    pontos[timeMandante] += 3;
-                } else if (golsM < golsV) {
-                    pontos[timeVisitante] += 3;
-                } else {
-                    pontos[timeMandante] += 1;
-                    pontos[timeVisitante] += 1;
+                if (filterValue === 'all') {
+                    // Já removeu 'hidden', não faz nada
+                } else if (filterValue === 'A-D' || filterValue === 'E-H' || filterValue === 'I-L') {
+                    // Filtrar por intervalo de letras (usando classes CSS específicas)
+                    if (!card.classList.contains(`group-${filterValue}`)) {
+                        card.classList.add('hidden');
+                    }
+                } else if (filterValue === 'confederacoes') {
+                    // Para este exemplo simples, mostramos todos os grupos que têm confederações (todos)
+                    // Uma implementação real pode filtrar times específicos *dentro* dos grupos.
+                } else if (filterValue === 'anfitrioes') {
+                    // Filtrar apenas grupos marcados como anfitriões
+                    if (!card.classList.contains('is-host')) {
+                        card.classList.add('hidden');
+                    }
+                } else if (filterValue === 'estatisticas') {
+                    // Esconder todos os grupos para mostrar uma tela de estatísticas futura
+                    card.classList.add('hidden');
+                    // Aqui você adicionaria lógica para mostrar um painel de estatísticas.
                 }
-            }
+            });
         });
-
-        // Atualiza visualmente os pontos na tabela HTML
-        for (const time in pontos) {
-            const linha = document.querySelector(`tr[data-selecao="${time}"]`);
-            if (linha) {
-                linha.querySelector('.pontos').textContent = pontos[time];
-            }
-        }
-        
-        // Dica: Para deixar perfeito, você pode adicionar uma lógica aqui para ordenar as linhas (<tr>) com base nos pontos!
-    }
+    });
 });
